@@ -17,8 +17,13 @@ import javax.servlet.Servlet;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 
+/**
+ * 数据源配置
+ * @author ycyoes
+ * @version 2019-09-17
+ */
 @Configuration
-@EnableConfigurationProperties({DruidDataSourceProperties.class})
+//@EnableConfigurationProperties({DruidDataSourceProperties.class})
 public class DruidConfig {
     @Autowired
     private DruidDataSourceProperties properties;

@@ -3,6 +3,11 @@ package com.turing.springbootintegrate.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * druid配置参数
+ * @author ycyoes
+ * @version 2019-09-17
+ */
 @Component
 @ConfigurationProperties(prefix = "spring.datasource.druid")
 public class DruidDataSourceProperties {

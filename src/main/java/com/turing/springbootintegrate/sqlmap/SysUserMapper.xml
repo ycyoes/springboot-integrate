@@ -214,4 +214,10 @@
         <include refid="Base_Column_List" />
         from sys_user
     </select>
+
+    <select id="selectPage"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from sys_user
+    </select>
 </mapper>

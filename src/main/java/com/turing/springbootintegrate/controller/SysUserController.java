@@ -1,11 +1,9 @@
 package com.turing.springbootintegrate.controller;
 
+import com.turing.springbootintegrate.common.utils.PageRequest;
 import com.turing.springbootintegrate.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("user")
@@ -21,5 +19,10 @@ public class SysUserController {
     @GetMapping(value = "/findAll")
     public Object findAll() {
         return sysUserService.findAll();
+    }
+
+    @PostMapping(value = "/findPage")
+    public Object findPage(@RequestBody PageRequest pageQuery) {
+        return sysUserService.findPage(pageQuery);
     }
 }

@@ -34,4 +34,12 @@ spring boot project of integrating
         return sessionFactory.getObject();
     }
 ```
-## mybatis pagehelper
+## 使用pagehelper插件进行分页查询
+``` yaml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+```
+

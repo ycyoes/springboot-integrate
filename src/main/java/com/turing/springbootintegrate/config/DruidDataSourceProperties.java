@@ -22,8 +22,8 @@ public class DruidDataSourceProperties {
     private int minIdle;
     private int maxActive = 100;
     private long maxWait;
-    private long timeBetweenEvictionRunsMills;
-    private long minEvictableIdleTimeMills;
+    private long timeBetweenEvictionRunsMillis;
+    private long minEvictableIdleTimeMillis;
     private String validationQuery;
     private boolean testWhileIdle;
     private boolean testOnBorrow;
@@ -98,20 +98,20 @@ public class DruidDataSourceProperties {
         this.maxWait = maxWait;
     }
 
-    public long getTimeBetweenEvictionRunsMills() {
-        return timeBetweenEvictionRunsMills;
+    public long getTimeBetweenEvictionRunsMillis() {
+        return timeBetweenEvictionRunsMillis;
     }
 
-    public void setTimeBetweenEvictionRunsMills(long timeBetweenEvictionRunsMills) {
-        this.timeBetweenEvictionRunsMills = timeBetweenEvictionRunsMills;
+    public void setTimeBetweenEvictionRunsMillis(long timeBetweenEvictionRunsMillis) {
+        this.timeBetweenEvictionRunsMillis = timeBetweenEvictionRunsMillis;
     }
 
-    public long getMinEvictableIdleTimeMills() {
-        return minEvictableIdleTimeMills;
+    public long getMinEvictableIdleTimeMillis() {
+        return minEvictableIdleTimeMillis;
     }
 
-    public void setMinEvictableIdleTimeMills(long minEvictableIdleTimeMills) {
-        this.minEvictableIdleTimeMills = minEvictableIdleTimeMills;
+    public void setMinEvictableIdleTimeMillis(long minEvictableIdleTimeMillis) {
+        this.minEvictableIdleTimeMillis = minEvictableIdleTimeMillis;
     }
 
     public String getValidationQuery() {

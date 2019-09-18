@@ -40,8 +40,8 @@ public class DruidConfig {
         druidDataSource.setMinIdle(properties.getMinIdle());
         druidDataSource.setMaxActive(properties.getMaxActive());
         druidDataSource.setMaxWait(properties.getMaxWait());
-        druidDataSource.setTimeBetweenEvictionRunsMillis(properties.getTimeBetweenEvictionRunsMills());
-        druidDataSource.setMinEvictableIdleTimeMillis(properties.getMinEvictableIdleTimeMills());
+        druidDataSource.setTimeBetweenEvictionRunsMillis(properties.getTimeBetweenEvictionRunsMillis());
+        druidDataSource.setMinEvictableIdleTimeMillis(properties.getMinEvictableIdleTimeMillis());
         druidDataSource.setValidationQuery(properties.getValidationQuery());
         druidDataSource.setTestWhileIdle(properties.isTestWhileIdle());
         druidDataSource.setTestOnBorrow(properties.isTestOnBorrow());

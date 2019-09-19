@@ -10,6 +10,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 
+@Deprecated
 @Configuration
 @MapperScan("com.turing.springbootintegrate.**.dao")
 public class MyBatisConfig {

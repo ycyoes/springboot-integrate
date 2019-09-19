@@ -1,5 +1,6 @@
 package com.turing.springbootintegrate;
 
+import com.turing.springbootintegrate.config.MyBatisConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;

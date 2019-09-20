@@ -43,3 +43,7 @@ pagehelper:
   params: count=countSql
 ```
 
+## 多数据源配置
+相关配置在config/multisource包下，若使用单数据源打开DruidConfig和MyBatisConfig中的@Configuration注解即可
+
+

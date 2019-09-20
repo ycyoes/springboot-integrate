@@ -22,8 +22,7 @@ import java.sql.SQLException;
  * @author ycyoes
  * @version 2019-09-17
  */
-@Configuration
-//@EnableConfigurationProperties({DruidDataSourceProperties.class})
+//@Configuration
 public class DruidConfig {
     @Autowired
     private DruidDataSourceProperties properties;

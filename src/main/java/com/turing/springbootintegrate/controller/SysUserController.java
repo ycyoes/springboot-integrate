@@ -1,6 +1,7 @@
 package com.turing.springbootintegrate.controller;
 
 import com.turing.springbootintegrate.common.utils.PageRequest;
+import com.turing.springbootintegrate.config.multisource.DataSource;
 import com.turing.springbootintegrate.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,5 +25,11 @@ public class SysUserController {
     @PostMapping(value = "/findPage")
     public Object findPage(@RequestBody PageRequest pageQuery) {
         return sysUserService.findPage(pageQuery);
+    }
+
+    @DataSource(value="slave")
+    @PostMapping(value = "findAll2")
+    public Object findAll2() {
+        return sysUserService.findAll();
     }
 }

@@ -1,5 +1,10 @@
 server:
-  port: 8080
+  port: 443
+  ssl:
+    key-store: classpath:2831966_www.ycyoes.com.pfx
+    enable: true
+    key-store-password: 5HxPU0CW
+    key-store-type: PKCS12
 spring:
   datasource:
     master:

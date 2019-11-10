@@ -78,4 +78,18 @@ maven resource插件会将指定后缀外文件进行修改，导致证书文件
  	</configuration>
  </plugin>
 ```
+### 自定义加解密方法
+#####  通过继承Configfilter类重写decrypt方法实现
+1. 配置项filters中指定自定义解密类路径；
+2. 配置decrypt=true；
+3. 多数据源时，需为每个数据源都配置如下两项；
+
+``` 
+filters: com.turing.springbootintegrate.filters.SecurityConfigFilter
+connectionProperties: config.decrypt=true
+```
+_自定义config时，不能与默认的config同时使用，否则会使用默认的解密方法，导致无法解密_
+
+
+
 

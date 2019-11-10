@@ -11,6 +11,8 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
+
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.util.HashMap;
@@ -27,15 +29,17 @@ public class MyBatisMultiConfig {
 
     @Bean("master")
     @Primary
-    @ConfigurationProperties(prefix = "spring.datasource.master")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.master")
     public DataSource master() {
-        return DataSourceBuilder.create().build();
+//        return DataSourceBuilder.create().build();
+        return DruidDataSourceBuilder.create().build();
     }
 
     @Bean("slave")
-    @ConfigurationProperties(prefix = "spring.datasource.slave")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.slave")
     public DataSource slave() {
-        return DataSourceBuilder.create().build();
+//        return DataSourceBuilder.create().build();
+        return DruidDataSourceBuilder.create().build();
     }
 
     @Bean("dynamicDataSource")

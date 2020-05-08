@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <h2.version>1.4.200</h2.version>
     </properties>
 
     <dependencies>
@@ -37,6 +38,13 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <!--mybatis-->

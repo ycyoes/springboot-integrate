@@ -74,6 +74,12 @@
             <version>1.1.17</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>14</version>
+        </dependency>
+
         <!-- swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -190,7 +196,7 @@
             	<artifactId>maven-resources-plugin</artifactId>
             	<configuration>
             		<encoding>UTF-8</encoding>
-            		过滤后缀为pem、pfx的证书文件
+            		<!--过滤后缀为pem、pfx的证书文件-->
             		<nonFilteredFileExtensions>
             			<nonFilteredFileExtension>pem</nonFilteredFileExtension>
             			<nonFilteredFileExtension>pfx</nonFilteredFileExtension>

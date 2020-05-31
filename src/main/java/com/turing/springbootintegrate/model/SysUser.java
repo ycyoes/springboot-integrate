@@ -1,8 +1,11 @@
 package com.turing.springbootintegrate.model;
 
+import com.turing.springbootintegrate.common.utils.excel.annotation.ExcelField;
+
 import java.util.Date;
 
 public class SysUser {
+
     private Long id;
 
     private String name;
@@ -41,6 +44,7 @@ public class SysUser {
         this.id = id;
     }
 
+    @ExcelField(title = "用户名", align = 2, sort = 1)
     public String getName() {
         return name;
     }
@@ -49,6 +53,7 @@ public class SysUser {
         this.name = name == null ? null : name.trim();
     }
 
+    @ExcelField(title = "昵称", align = 2, sort = 10)
     public String getNickName() {
         return nickName;
     }
@@ -81,6 +86,7 @@ public class SysUser {
         this.salt = salt == null ? null : salt.trim();
     }
 
+    @ExcelField(title = "邮箱", align = 2, sort = 30)
     public String getEmail() {
         return email;
     }
@@ -89,6 +95,7 @@ public class SysUser {
         this.email = email == null ? null : email.trim();
     }
 
+    @ExcelField(title = "电话", align = 2, sort = 20)
     public String getMobile() {
         return mobile;
     }

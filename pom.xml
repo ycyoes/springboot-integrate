@@ -127,8 +127,14 @@
       <artifactId>fst</artifactId>
       <version>${fst.version}</version>
     </dependency>
-		
-		 <!-- Apache Commons -->
+
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.68</version>
+    </dependency>
+
+    <!-- Apache Commons -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>

@@ -28,7 +28,7 @@ public class SpringbootIntegrateApplication {
      * 将http 重定向到 https
      * @return
      */
-    @Bean
+//    @Bean
     public TomcatServletWebServerFactory servletContainer() {
 
         TomcatServletWebServerFactory  tomcat = new TomcatServletWebServerFactory () {

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.turing.springbootintegrate.dao.ZyAccountMapper">
+  <resultMap id="BaseResultMap" type="com.turing.springbootintegrate.model.ZyAccount">
+    <id column="userId" jdbcType="VARCHAR" property="userId" />
+    <result column="lxdh" jdbcType="VARCHAR" property="lxdh" />
+    <result column="userName" jdbcType="VARCHAR" property="userName" />
+    <result column="departmentId" jdbcType="VARCHAR" property="departmentId" />
+    <result column="departmentName" jdbcType="VARCHAR" property="departmentName" />
+    <result column="rName" jdbcType="VARCHAR" property="rName" />
+  </resultMap>
+
+  <select id="getPendingAccount" resultMap="BaseResultMap">
+    SELECT t.* FROM (
+            SELECT *
+            FROM (
+
+            SELECT u.USERID "userId", lxdh "lxdh",userName "userName",d.departmentId,d.departmentName,listagg (TO_CHAR(ri.R_NAME), ';') WITHIN GROUP (ORDER BY ri.R_NAME) rName
+            FROM a4_sys_user u
+            LEFT JOIN A4_SYS_USERINROLE r on u.userId = r.USERID
+            LEFT JOIN a4_sys_roleinfo ri on r.roleId = ri.roleId
+            LEFT JOIN A4_SYS_DEPARTMENT d on u.ssdwbs = d.departmentId
+            GROUP BY u.USERID,d.departmentId,d.departmentName,lxdh,userName
+            )
+            WHERE  "INSTR"(rname, #{roleName, jdbcType=VARCHAR})>0
+            ) t LEFT JOIN zz_user_zy_info zi on t."userId" = zi.user_id
+            WHERE zi.user_id is null
+  </select>
+
+  <update id="updateDhStatus" >
+    update ZZ_ZY_DUANHAO set USE_STATE = '1' where DUAN_HAO = #{duanHao};
+  </update>
+
+  <insert id="insertUserDHRel" parameterType="com.turing.springbootintegrate.model.ZyUserDHRel">
+    insert into zz_user_zy_info (user_id, zy_id, duan_hao, create_time, create_user, login_name)
+    values (#{userId, jdbcType=VARCHAR}, #{zyId,jdbcType=VARCHAR}, #{duanHao,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}
+  </insert>
+
+
+</mapper>
